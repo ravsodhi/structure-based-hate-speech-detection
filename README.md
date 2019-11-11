@@ -6,6 +6,7 @@ Contributors: Ravsimar Singh, Ishita Vohra, Aniket Shrimal, Harsh Shukla
 All source code is in the `src` folder. Most of our code is in the form of jupyter notebooks
 
 hate-speech-model2.ipynb => Combining basic features and using Logistic Regression with regularisation. It also contains the baseline code
+structure-based-hate-speech.ipynb => Incorporating features such as dependency trees using TreeLSTM model. It also contains the final code.
 
 ## Problem Statement 
 Traditional methods for hate speech detection use tons of training data to mine the hateful structure but due to disproportionate use of different terms they are prone towards learning bias against specific objects, personalities or groups. Idea is to propose a method that takes into account the grammatical structure of the sentence to predict hatefulness.
