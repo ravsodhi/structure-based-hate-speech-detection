@@ -50,11 +50,11 @@ Our baseline models include models such as Logistic Regression, SVMs and LSTMs. 
 * Accuracy
 * F1-Score
 * Recall
-On the basis of above metrics we found that TreeLSTM resulted in highest accuracy(91.26%) and highest F1-score(0.90). When we used our new feature spaces(i.e concatenating all the three features) and used Logistic Regression with L1 regularisation, accuracy was 89.91%, F1-score was 0.90 and recall was the highest(0.79). But we prefer using TreeLSTM since the feature space is sparse, model results in overfitting.We have tried to reduce it by using L1 regularisation, still it may persist in the model as it has not been removed completely. 
-| Model | Accuracy  | F1-score | Recall
-| ------- | --- |
-| TreeLSTM | 91.26% | 0.90 | 0.66
-| Basic Feature Space and LR with L1 regularisation | 89.91 | 0.90 | 0.79
+On the basis of above metrics we found that TreeLSTM resulted in highest accuracy(91.26%) and highest F1-score(0.90). When we used our new feature space(i.e concatenating all the three features) and used Logistic Regression with L1 regularisation, accuracy was 89.91%, F1-score was 0.90 and recall was the highest(0.79). But we prefer using TreeLSTM since the feature space is sparse, model results in overfitting.We have tried to reduce it by using L1 regularisation, still it may persist in the model as it has not been removed completely. Hence #### TreeLSTM is preferred over all the models we tried.
+| Model | Accuracy  | F1-score | Recall | 
+| ------- | --- | -------- | ---- |
+| TreeLSTM | 91.26% | 0.90 | 0.66 | 
+| Basic Feature Space and LR with L1 regularisation | 89.91 | 0.90 | 0.79 | 
 
  
 
