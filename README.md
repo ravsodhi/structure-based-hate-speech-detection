@@ -33,7 +33,26 @@ We used the following features:
   * Unigrams
   * Unigrams and Bigrams
   * Unigrams, Bigrams and Trigrams
-* POS Tagging - 
+* POS Tagging - It means labelling words with their Part of Speech. It is a supervised learning solution that uses features like previous word, next word, is first letter captialized etc. NLTK library has a function to get POS tags after tokenization. POS tags unigrams, bigrams and trigrams are weighed by their Tf-Idf.
+* Sentiment Analysis + Other features - Sentiment Analysis is an automated process that detects subjective opinions from a text categorising it as positive, negative or neutral. We used Python's NLTK library for this which calculates to polarity(sentiment analysis) of every sentence.Polarity means emotions expressed in a sentence.
+* Other Features - We also incorporated various other scores like FRE (Flesh Reading Ease) scores and FKGL (Flesh-Kincaid Grade Level scores) which are based on number of words and syllables in a document. They are used to increase the readability of a document.
+* Concatenating the features -  We concatenate these features and make a feature set which is a very high dimensional vector and is sparse. This sparse feature set leads to  overfitting. So to avoid this we use Logistic Regression with regularization parameters (L1, L2).
+
+## Models Incorporated
+* Logistic Regression (with and without Regularisation)
+  * With regularisation -
+  * Without Regularisation - 
+* Support Vector Machines - 
+* LSTM -
+* TreeLSTM - 
+
+## Metrics used
+* Accuracy
+* F1-Score
+* Recall
+
+## Youtube link
+
 
 ## Model Architecture
 Our baseline models include models such as Logistic Regression, SVMs and LSTMs. Our final code implements a more complex model, TreeLSTM, to incorporate structure into our models. Using TreeLSTM, we are able to use the Dependency Parse Trees as features in our model. Traditionally, LSTMs are sequential in nature and giving tree like non-linear inputs is a challenge. We are able to solve this using TreeLSTM, which actually utilizes the parent-child relationship of the tree nodes to learn about the structure of the given sentence.
