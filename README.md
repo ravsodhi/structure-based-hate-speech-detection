@@ -40,11 +40,9 @@ We used the following features:
 
 ## Models Incorporated
 Our baseline models include models such as Logistic Regression, SVMs and LSTMs. But for final phase we used TreeLSTM. We also changed our feature space and performed Logistic Regression with regularisation.
-* Logistic Regression (with and without Regularisation)
-  * With regularisation -
-  * Without Regularisation - 
-* Support Vector Machines - 
-* LSTM -
+* Logistic Regression (with and without Regularisation): When we use either L1 or L2 regularisation(adding bias) it reduces the overfitting and increase the generalisation perfomance. However too much bias will result in underfitting.
+* Support Vector Machines
+* LSTM
 * TreeLSTM - Our final code implements a more complex model, TreeLSTM, to incorporate structure into our models. Using TreeLSTM, we are able to use the Dependency Parse Trees as features in our model. Traditionally, LSTMs are sequential in nature and giving tree like non-linear inputs is a challenge. We are able to solve this using TreeLSTM, which actually utilizes the parent-child relationship of the tree nodes to learn about the structure of the given sentence.
 ![TreeLSTM](docs/treelstm.png)
 
@@ -52,6 +50,8 @@ Our baseline models include models such as Logistic Regression, SVMs and LSTMs. 
 * Accuracy
 * F1-Score
 * Recall
+On the basis of above metrics we found that TreeLSTM resulted in highest accuracy(91.26%) and highest F1-score(0.90). When we used our new feature spaces(i.e concatenating all the three features) and used Logistic Regression with L1 regularisation, accuracy was 89.91%, F1-score was 0.90 and recall was the highest(0.79). But we prefer using TreeLSTM since the feature space is sparse, model results in overfitting.We have tried to reduce it by using L1 regularisation, still it may persist in the model as it has not been removed completely. 
+ 
 
 ## Youtube link
 [Video](https://youtu.be/ZNLLM59qlj4)
