@@ -43,7 +43,7 @@ Our baseline models include models such as Logistic Regression, SVMs and LSTMs. 
 * Logistic Regression (with and without Regularisation): When we use either L1 or L2 regularisation(adding bias) it reduces the overfitting and increase the generalisation perfomance. However too much bias will result in underfitting.
 * Support Vector Machines
 * LSTM
-* TreeLSTM - Our final code implements a more complex model, TreeLSTM, to incorporate structure into our models. Using TreeLSTM, we are able to use the Dependency Parse Trees as features in our model. Traditionally, LSTMs are sequential in nature and giving tree like non-linear inputs is a challenge. We are able to solve this using TreeLSTM, which actually utilizes the parent-child relationship of the tree nodes to learn about the structure of the given sentence.
+* TreeLSTM - Our final code implements a more complex model, TreeLSTM, which incorporates non-linear semantic features such as Dependency Trees into our model. Using TreeLSTM, we are able to use the Dependency Parse Trees as features in our model. The difference  between  the  standard LSTM  unit  and  Tree-LSTM  units  is  that  gating vectors  and  memory  cell  updates are dependent on  the  states  of  possibly  many  child  units. Additionally, instead of a single forget gate, the Tree-LSTM unit contains one forget gate f <sub> jk</sub>  for each child k.   This  allows  the  Tree-LSTM  unit  to  selectively incorporate information from each child.
 ![TreeLSTM](docs/treelstm.png)
 
 ## Metrics used
