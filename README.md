@@ -5,6 +5,8 @@ Contributors: Ravsimar Singh, Ishita Vohra, Aniket Shrimal, Harsh Shukla
 ## Usage
 All source code is in the `src` folder. Most of our code is in the form of jupyter notebooks
 
+hate-speech-model2.ipynb => Combining basic features and using Logistic Regression with regularisation. It also contains the baseline code
+
 ## Problem Statement 
 Traditional methods for hate speech detection use tons of training data to mine the hateful structure but due to disproportionate use of different terms they are prone towards learning bias against specific objects, personalities or groups. Idea is to propose a method that takes into account the grammatical structure of the sentence to predict hatefulness.
 
@@ -36,7 +38,7 @@ We used the following features:
 * POS Tagging - It means labelling words with their Part of Speech. It is a supervised learning solution that uses features like previous word, next word, is first letter captialized etc. NLTK library has a function to get POS tags after tokenization. POS tags unigrams, bigrams and trigrams are weighed by their Tf-Idf.
 * Sentiment Analysis + Other features - Sentiment Analysis is an automated process that detects subjective opinions from a text categorising it as positive, negative or neutral. We used Python's NLTK library for this which calculates to polarity(sentiment analysis) of every sentence.Polarity means emotions expressed in a sentence.
 * Other Features - We also incorporated various other scores like FRE (Flesh Reading Ease) scores and FKGL (Flesh-Kincaid Grade Level scores) which are based on number of words and syllables in a document. They are used to increase the readability of a document.
-* Concatenating the features -  We concatenate these features and make a feature set which is a very high dimensional vector and is sparse. This sparse feature set leads to  overfitting. So to avoid this we use Logistic Regression with regularization parameters (L1, L2).
+* Concatenating the features -  We concatenated these features(i.e sentiment analysis, POS tagging, other features and TfIDF Vectorizer) and make a feature set which is a very high dimensional vector and is sparse. This sparse feature set leads to  overfitting. So to avoid this we use Logistic Regression with regularization parameters (L1, L2).
 
 ## Models Incorporated
 Our baseline models include models such as Logistic Regression, SVMs and LSTMs. But for final phase we used TreeLSTM. We also changed our feature space and performed Logistic Regression with regularisation.
@@ -46,11 +48,15 @@ Our baseline models include models such as Logistic Regression, SVMs and LSTMs. 
 * TreeLSTM - Our final code implements a more complex model, TreeLSTM, which incorporates non-linear semantic features such as Dependency Trees into our model. Using TreeLSTM, we are able to use the Dependency Parse Trees as features in our model. The difference  between  the  standard LSTM  unit  and  Tree-LSTM  units  is  that  gating vectors  and  memory  cell  updates are dependent on  the  states  of  possibly  many  child  units. Additionally, instead of a single forget gate, the Tree-LSTM unit contains one forget gate f <sub> jk</sub>  for each child k.   This  allows  the  Tree-LSTM  unit  to  selectively incorporate information from each child.
 ![TreeLSTM](docs/treelstm.png)
 
-## Metrics used
+## Analysis
+
+### Metrics used
 * Accuracy
 * F1-Score
 * Recall <br/>
-On the basis of above metrics we found that TreeLSTM resulted in highest accuracy(91.26%) and highest F1-score(0.90). When we used our new feature space(i.e concatenating all the three features) and used Logistic Regression with L1 regularisation, accuracy was 89.91%, F1-score was 0.90 and recall was the highest(0.79). But we prefer using TreeLSTM since the feature space is sparse, model results in overfitting.We have tried to reduce it by using L1 regularisation, still it may persist in the model as it has not been removed completely. 
+For n-grams we restricted upto trigrams only (i.e n = 3). As the n-gram length increases, the amount of times we will see any given n-gram will decrease. Theoretically higher n gram contains information regarding word’s context but practically it doesn’t generalize well to other datasets as the number of events it has seen during a training becomes progressively less. This leads to overfitting. Hence we prefer lower n.
+Baseline: SVM's didn't perform well as compared to Logistic Regression. It gave very less accuracies (~ nearly 75%). LSTM worked moderately well. The accuracy for LSTM was around 84%. 
+Final Model: On the basis of above metrics we found that TreeLSTM resulted in highest accuracy(91.26%) and highest F1-score(0.90). When we used our new feature space(i.e concatenating all the three features) and used Logistic Regression with L1 regularisation, accuracy was 89.91%, F1-score was 0.90 and recall was the highest(0.79). But we prefer using TreeLSTM since the feature space is sparse, model results in overfitting.We have tried to reduce it by using L1 regularisation, still it may persist in the model as it has not been removed completely. 
 ### Hence TreeLSTM is preferred over all the models we tried.
 
 | Model | Accuracy  | F1-score | Recall | 
