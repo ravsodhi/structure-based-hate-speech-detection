@@ -20,8 +20,17 @@ We have used the following techniques for preprocessing:
 - Removing excess letters, other twitter specific data (URLs, @mentions, hashtags) - Particularly in social media, these types of words are unique and must be removed, since they do not contribute much to actual meaning being conveyed in the sentence.
 
 ## Feature Extraction
-We have used the following techniques for feature extraction:
-
+Vectorization - We call vectorization the general process of turning a collection of text documents into numerical feature vectors. This specific strategy (tokenization, counting and normalization) is called the Bag of Words or “Bag of n-grams” representation. Documents are described by word occurrences while completely ignoring the relative position information of the words in the document. Scikit-learn provides utilities for the most common ways to extract numerical features from text content, namely:
+  * tokenizing strings and giving an integer id for each possible token, for instance by using white-spaces and punctuation as token separators.
+  * counting the occurrences of tokens in each document.
+  * normalizing and weighting with diminishing importance tokens that occur in the majority of samples/documents.
+We used the following features:
+* CountVectorizer - It counts the number of times a token shows up in the document and uses this value as its weight.
+* TfIdfVectorizer - TF-IDF stands for "term frequency-inverse document frequency", meaning the weight assigned to each token not only depends on its frequency in a document but also how recurrent that term is in the entire corpora.It converts the text documents to a matrix of tfidf features. The combinations of n grams which we used are as follows: 
+  * Unigrams
+  * Unigrams and Bigrams
+  * Unigrams, Bigrams and Trigrams
+* POS Tagging - 
 
 
 
