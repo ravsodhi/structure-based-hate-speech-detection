@@ -20,8 +20,8 @@ We have used the following techniques for preprocessing:
 - Removing excess letters, other twitter specific data (URLs, @mentions, hashtags) - Particularly in social media, these types of words are unique and must be removed, since they do not contribute much to actual meaning being conveyed in the sentence.
 
 ## Feature Extraction
-We have used various techniques for feature extraction
-- 
+We have used the following techniques for feature extraction:
+
 
 
 
