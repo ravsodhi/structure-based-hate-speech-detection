@@ -39,7 +39,7 @@ We used the following features:
 * Concatenating the features -  We concatenate these features and make a feature set which is a very high dimensional vector and is sparse. This sparse feature set leads to  overfitting. So to avoid this we use Logistic Regression with regularization parameters (L1, L2).
 
 ## Models Incorporated
-Our baseline models include models such as Logistic Regression, SVMs and LSTMs.
+Our baseline models include models such as Logistic Regression, SVMs and LSTMs. But for final phase we used TreeLSTM. We also changed our feature space and performed Logistic Regression with regularisation.
 * Logistic Regression (with and without Regularisation)
   * With regularisation -
   * Without Regularisation - 
