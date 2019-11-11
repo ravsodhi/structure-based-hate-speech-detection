@@ -48,12 +48,12 @@ Our baseline models include models such as Logistic Regression, SVMs and LSTMs. 
 * TreeLSTM - Our final code implements a more complex model, TreeLSTM, which incorporates non-linear semantic features such as Dependency Trees into our model. Using TreeLSTM, we are able to use the Dependency Parse Trees as features in our model. The difference  between  the  standard LSTM  unit  and  Tree-LSTM  units  is  that  gating vectors  and  memory  cell  updates are dependent on  the  states  of  possibly  many  child  units. Additionally, instead of a single forget gate, the Tree-LSTM unit contains one forget gate f <sub> jk</sub>  for each child k.   This  allows  the  Tree-LSTM  unit  to  selectively incorporate information from each child.
 ![TreeLSTM](docs/treelstm.png)
 
-## Analysis
-
 ### Metrics used
 * Accuracy
 * F1-Score
 * Recall <br/>
+
+## Analysis
 - For n-grams we restricted upto trigrams only (i.e n = 3). As the n-gram length increases, the amount of times we will see any given n-gram will decrease. Theoretically higher n gram contains information regarding word’s context but practically it doesn’t generalize well to other datasets as the number of events it has seen during a training becomes progressively less. This leads to overfitting. Hence we prefer lower n.
 - Baseline: SVM's didn't perform well as compared to Logistic Regression. It gave very less accuracies (~ nearly 75%). LSTM worked moderately well. The accuracy for LSTM was around 84%. 
 - Final Model: On the basis of above metrics we found that TreeLSTM resulted in highest accuracy(91.26%) and highest F1-score(0.90). When we used our new feature space(i.e concatenating all the three features) and used Logistic Regression with L1 regularisation, accuracy was 89.91%, F1-score was 0.90 and recall was the highest(0.79). But we prefer using TreeLSTM since the feature space is sparse, model results in overfitting.We have tried to reduce it by using L1 regularisation, still it may persist in the model as it has not been removed completely. 
