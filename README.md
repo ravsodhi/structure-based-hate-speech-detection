@@ -54,5 +54,4 @@ Our baseline models include models such as Logistic Regression, SVMs and LSTMs. 
 * Recall
 
 ## Youtube link
-
-
+[Video](https://youtu.be/ZNLLM59qlj4)
