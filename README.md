@@ -1,6 +1,9 @@
-# Structure Based-Hate Speech Detection
+# Structure Based Hate Speech Detection
 
 Contributors: Ravsimar Singh, Ishita Vohra, Aniket Shrimal, Harsh Shukla
+
+## Usage
+All source code is in the `src` folder. Most of our code is in the form of jupyter notebooks
 
 ## Problem Statement 
 Traditional methods for hate speech detection use tons of training data to mine the hateful structure but due to disproportionate use of different terms they are prone towards learning bias against specific objects, personalities or groups. Idea is to propose a method that takes into account the grammatical structure of the sentence to predict hatefulness.
@@ -20,7 +23,7 @@ We have used the following techniques for preprocessing:
 - Removing excess letters, other twitter specific data (URLs, @mentions, hashtags) - Particularly in social media, these types of words are unique and must be removed, since they do not contribute much to actual meaning being conveyed in the sentence.
 
 ## Feature Extraction
-Vectorization - We call vectorization the general process of turning a collection of text documents into numerical feature vectors. This specific strategy (tokenization, counting and normalization) is called the Bag of Words or “Bag of n-grams” representation. Documents are described by word occurrences while completely ignoring the relative position information of the words in the document. Scikit-learn provides utilities for the most common ways to extract numerical features from text content, namely:
+*Vectorization* - We call vectorization the general process of turning a collection of text documents into numerical feature vectors. This specific strategy (tokenization, counting and normalization) is called the Bag of Words or “Bag of n-grams” representation. Documents are described by word occurrences while completely ignoring the relative position information of the words in the document. Scikit-learn provides utilities for the most common ways to extract numerical features from text content, namely:
   * tokenizing strings and giving an integer id for each possible token, for instance by using white-spaces and punctuation as token separators.
   * counting the occurrences of tokens in each document.
   * normalizing and weighting with diminishing importance tokens that occur in the majority of samples/documents.
@@ -32,8 +35,7 @@ We used the following features:
   * Unigrams, Bigrams and Trigrams
 * POS Tagging - 
 
-
-
-
-
+## Model Architecture
+Our baseline models include models such as Logistic Regression, SVMs and LSTMs. Our final code implements a more complex model, TreeLSTM, to incorporate structure into our models. Using TreeLSTM, we are able to use the Dependency Parse Trees as features in our model. Traditionally, LSTMs are sequential in nature and giving tree like non-linear inputs is a challenge. We are able to solve this using TreeLSTM, which actually utilizes the parent-child relationship of the tree nodes to learn about the structure of the given sentence.
+![TreeLSTM](docs/treelstm.png)
 
