@@ -5,7 +5,8 @@ Contributors: Ravsimar Singh, Ishita Vohra, Aniket Shrimal, Harsh Shukla
 ## Usage
 All source code is in the `src` folder. Most of our code is in the form of jupyter notebooks
 
-hate-speech-model2.ipynb => Combining basic features and using Logistic Regression with regularisation. It also contains the baseline code
+hate-speech-model2.ipynb => Combining basic features and using Logistic Regression with regularisation. It also contains the baseline code.
+
 structure-based-hate-speech.ipynb => Incorporating features such as dependency trees using TreeLSTM model. It also contains the final code.
 
 ## Problem Statement 
