@@ -35,6 +35,21 @@ We used the following features:
 * Other Features - We also incorporated various other scores like FRE (Flesh Reading Ease) scores and FKGL (Flesh-Kincaid Grade Level scores) which are based on number of words and syllables in a document. They are used to increase the readability of a document.
 * Concatenating the features -  We concatenate these features and make a feature set which is a very high dimensional vector and is sparse. This sparse feature set leads to  overfitting. So to avoid this we use Logistic Regression with regularization parameters (L1, L2).
 
+## Models Incorporated
+* Logistic Regression (with and without Regularisation)
+  * With regularisation -
+  * Without Regularisation - 
+* Support Vector Machines - 
+* LSTM -
+* TreeLSTM - 
+
+## Metrics used
+* Accuracy
+* F1-Score
+* Recall
+
+## Youtube link
+
 
 
 
