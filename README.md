@@ -39,12 +39,14 @@ We used the following features:
 * Concatenating the features -  We concatenate these features and make a feature set which is a very high dimensional vector and is sparse. This sparse feature set leads to  overfitting. So to avoid this we use Logistic Regression with regularization parameters (L1, L2).
 
 ## Models Incorporated
+Our baseline models include models such as Logistic Regression, SVMs and LSTMs.
 * Logistic Regression (with and without Regularisation)
   * With regularisation -
   * Without Regularisation - 
 * Support Vector Machines - 
 * LSTM -
-* TreeLSTM - 
+* TreeLSTM - Our final code implements a more complex model, TreeLSTM, to incorporate structure into our models. Using TreeLSTM, we are able to use the Dependency Parse Trees as features in our model. Traditionally, LSTMs are sequential in nature and giving tree like non-linear inputs is a challenge. We are able to solve this using TreeLSTM, which actually utilizes the parent-child relationship of the tree nodes to learn about the structure of the given sentence.
+![TreeLSTM](docs/treelstm.png)
 
 ## Metrics used
 * Accuracy
@@ -53,8 +55,4 @@ We used the following features:
 
 ## Youtube link
 
-
-## Model Architecture
-Our baseline models include models such as Logistic Regression, SVMs and LSTMs. Our final code implements a more complex model, TreeLSTM, to incorporate structure into our models. Using TreeLSTM, we are able to use the Dependency Parse Trees as features in our model. Traditionally, LSTMs are sequential in nature and giving tree like non-linear inputs is a challenge. We are able to solve this using TreeLSTM, which actually utilizes the parent-child relationship of the tree nodes to learn about the structure of the given sentence.
-![TreeLSTM](docs/treelstm.png)
 
